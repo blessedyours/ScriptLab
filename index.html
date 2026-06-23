@@ -2,22 +2,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Open.MP Command Builder</title>
+<title>ScriptLab</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-<h1>Open.MP Command Builder</h1>
+<h1>ScriptLab</h1>
+<p class="subtitle">
+Open.MP / SA:MP Command Builder v1.1
+</p>
 
 <select id="framework">
     <option value="zcmd">ZCMD</option>
     <option value="pawncmd">Pawn.CMD</option>
-    <option value="plain">No Framework</option>
+    <option value="plain">Vanilla Pawn</option>
 </select>
 
-<select id="commandType">
+<select id="commandType" onchange="updateFields()">
     <option value="giveweapon">Give Weapon</option>
     <option value="revive">Revive Player</option>
     <option value="kill">Kill Player</option>
@@ -31,19 +34,21 @@
     <option value="ban">Ban</option>
 </select>
 
+<div id="extraFields"></div>
+
 <input id="cmdName" placeholder="Command Name">
 
-<input id="adminLevel" type="number" placeholder="Admin Level">
+<input id="adminLevel" type="number" placeholder="Admin Level" value="1">
 
 <button onclick="generateCode()">
-Generate
+Generate Code
 </button>
 
 <button onclick="copyCode()">
 Copy Code
 </button>
 
-<textarea id="output"></textarea>
+<textarea id="output" readonly></textarea>
 
 </div>
 

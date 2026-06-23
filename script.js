@@ -1,3 +1,12 @@
+const weapons = {
+    "Desert Eagle": 24,
+    "MP5": 29,
+    "AK47": 30,
+    "M4": 31,
+    "Shotgun": 25,
+    "Tec9": 32
+};
+
 function buildHeader(framework,name)
 {
     switch(framework)
@@ -10,6 +19,39 @@ function buildHeader(framework,name)
 
         default:
             return `public ${name}(playerid, params[])\n{`;
+    }
+}
+
+function updateFields()
+{
+    const type =
+    document.getElementById("commandType").value;
+
+    const container =
+    document.getElementById("extraFields");
+
+    if(type === "giveweapon")
+    {
+        container.innerHTML = `
+        <select id="weapon">
+            <option>Desert Eagle</option>
+            <option>MP5</option>
+            <option>AK47</option>
+            <option>M4</option>
+            <option>Shotgun</option>
+            <option>Tec9</option>
+        </select>
+
+        <input
+        id="ammo"
+        type="number"
+        value="500"
+        placeholder="Ammo">
+        `;
+    }
+    else
+    {
+        container.innerHTML = "";
     }
 }
 
@@ -41,12 +83,24 @@ function generateCode()
     {
         case "giveweapon":
 
+            const weapon =
+            document.getElementById("weapon").value;
+
+            const ammo =
+            document.getElementById("ammo").value;
+
+            const weaponid =
+            weapons[weapon];
+
             code += `
     new targetid;
 
-    GivePlayerWeapon(targetid,31,500);
+    GivePlayerWeapon(
+        targetid,
+        ${weaponid},
+        ${ammo}
+    );
 `;
-
         break;
 
         case "revive":
@@ -138,3 +192,5 @@ function copyCode()
 
     alert("Code copied!");
 }
+
+updateFields();
