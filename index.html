@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Open.MP Command Builder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Open.MP Command Builder</h1>
+
+<select id="framework">
+    <option value="zcmd">ZCMD</option>
+    <option value="pawncmd">Pawn.CMD</option>
+    <option value="plain">No Framework</option>
+</select>
+
+<select id="commandType">
+    <option value="giveweapon">Give Weapon</option>
+    <option value="revive">Revive Player</option>
+    <option value="kill">Kill Player</option>
+    <option value="health">Give Health</option>
+    <option value="armour">Give Armour</option>
+    <option value="repair">Repair Vehicle</option>
+    <option value="destroyvehicle">Destroy Vehicle</option>
+    <option value="money">Give Money</option>
+    <option value="setmoney">Set Money</option>
+    <option value="kick">Kick</option>
+    <option value="ban">Ban</option>
+</select>
+
+<input id="cmdName" placeholder="Command Name">
+
+<input id="adminLevel" type="number" placeholder="Admin Level">
+
+<button onclick="generateCode()">
+Generate
+</button>
+
+<button onclick="copyCode()">
+Copy Code
+</button>
+
+<textarea id="output"></textarea>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
