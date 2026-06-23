@@ -18,6 +18,24 @@ After repeatedly writing the same commands across different projects, I decided 
 
 ScriptLab is currently in its first public version and will continue to improve over time.
 
+## Getting Started
+
+### Run Locally
+
+1. Download or clone the repository.
+2. Open the project folder.
+3. Launch `index.html` in your web browser.
+
+No installation or additional dependencies are required.
+
+## How To Use
+
+1. Select a framework.
+2. Choose the command type.
+3. Enter the required information.
+4. Click **Generate**.
+5. Copy the generated code into your gamemode or filterscript.
+
 ## Version
 
 Current version: **v1.0**
