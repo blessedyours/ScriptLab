@@ -1,0 +1,21 @@
+{
+  "giveweapon": {
+    "description": "Give a weapon to a target player."
+  },
+
+  "revive": {
+    "description": "Revive a player."
+  },
+
+  "kill": {
+    "description": "Kill a player."
+  },
+
+  "repair": {
+    "description": "Repair the player's vehicle."
+  },
+
+  "ban": {
+    "description": "Ban a player from the server."
+  }
+}
