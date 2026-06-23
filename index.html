@@ -1,54 +1,190 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ScriptLab</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="container">
 
-<h1>ScriptLab</h1>
+<header class="topbar">
+
+<div class="brand">
+
+<h1>🧪 ScriptLab</h1>
+
 <p class="subtitle">
-Open.MP / SA:MP Command Builder v1.1
+Open.MP / SA:MP Development Toolkit
 </p>
 
+</div>
+
+<div class="stats">
+
+<div class="stat-card">
+    <span>v1.1</span>
+</div>
+
+<div class="stat-card">
+    <span>11 Commands</span>
+</div>
+
+</div>
+
+</header>
+
+<div class="hero">
+
+<h2>Generate Pawn Commands Faster</h2>
+
+<p>
+Create ready-to-use Pawn command templates for Open.MP and SA:MP in seconds.
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>🚀 Quick Start</h3>
+
+<ul>
+    <li>Select your preferred framework.</li>
+    <li>Choose the command type.</li>
+    <li>Configure the available options.</li>
+    <li>Generate and copy the code.</li>
+</ul>
+
+</div>
+
+<label for="framework">
+Framework
+</label>
+
 <select id="framework">
-    <option value="zcmd">ZCMD</option>
-    <option value="pawncmd">Pawn.CMD</option>
-    <option value="plain">Vanilla Pawn</option>
+
+    <option value="zcmd">
+        ZCMD
+    </option>
+
+    <option value="pawncmd">
+        Pawn.CMD
+    </option>
+
+    <option value="plain">
+        Vanilla Pawn
+    </option>
+
 </select>
 
+<label for="commandType">
+Command Type
+</label>
+
 <select id="commandType" onchange="updateFields()">
-    <option value="giveweapon">Give Weapon</option>
-    <option value="revive">Revive Player</option>
-    <option value="kill">Kill Player</option>
-    <option value="health">Give Health</option>
-    <option value="armour">Give Armour</option>
-    <option value="repair">Repair Vehicle</option>
-    <option value="destroyvehicle">Destroy Vehicle</option>
-    <option value="money">Give Money</option>
-    <option value="setmoney">Set Money</option>
-    <option value="kick">Kick</option>
-    <option value="ban">Ban</option>
+
+    <option value="giveweapon">
+        Give Weapon
+    </option>
+
+    <option value="revive">
+        Revive Player
+    </option>
+
+    <option value="kill">
+        Kill Player
+    </option>
+
+    <option value="health">
+        Give Health
+    </option>
+
+    <option value="armour">
+        Give Armour
+    </option>
+
+    <option value="repair">
+        Repair Vehicle
+    </option>
+
+    <option value="destroyvehicle">
+        Destroy Vehicle
+    </option>
+
+    <option value="money">
+        Give Money
+    </option>
+
+    <option value="setmoney">
+        Set Money
+    </option>
+
+    <option value="kick">
+        Kick Player
+    </option>
+
+    <option value="ban">
+        Ban Player
+    </option>
+
 </select>
 
 <div id="extraFields"></div>
 
-<input id="cmdName" placeholder="Command Name">
+<label for="cmdName">
+Command Name
+</label>
 
-<input id="adminLevel" type="number" placeholder="Admin Level" value="1">
+<input
+id="cmdName"
+placeholder="Example: givegun">
+
+<label for="adminLevel">
+Required Admin Level
+</label>
+
+<input
+id="adminLevel"
+type="number"
+value="1"
+placeholder="Minimum admin level required">
+
+<div class="button-group">
 
 <button onclick="generateCode()">
-Generate Code
+⚡ Generate Code
 </button>
 
 <button onclick="copyCode()">
-Copy Code
+📋 Copy Code
 </button>
 
-<textarea id="output" readonly></textarea>
+</div>
+
+<label for="output">
+Generated Pawn Code
+</label>
+
+<textarea
+id="output"
+readonly
+placeholder="Generated code will appear here...">
+</textarea>
+
+<footer class="footer">
+
+<p>
+Built with ❤️ for the Open.MP & SA:MP community
+</p>
+
+<p>
+ScriptLab v1.1
+</p>
+
+</footer>
 
 </div>
 
